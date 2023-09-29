@@ -40,8 +40,8 @@ public class HelloApplication extends Application {
     public Image robotImage;
     private ImageView imageView;
     private double carRotation = 0;
-    private double carX = 2; // Initial X position
-    private double carY = 2; // Initial Y position
+    private double carX; // Initial X position
+    private double carY; // Initial Y position
     final double moveAmount = 10; // movement speed
 
     public static void main(String[] args) {
@@ -58,9 +58,10 @@ public class HelloApplication extends Application {
         // Load the car image
         robotImage = new Image(getClass().getResourceAsStream("/com/example/masegroupwork/robot.png"));
         imageView = new ImageView(robotImage);
-        //basically the image size
-        imageView.setScaleX(0.8);
-        imageView.setScaleY(0.8);
+        carX = -11 * MAZE_SIZE; // X-coordinate
+        carY = 3.5 * MAZE_SIZE; // Y-coordinate
+        imageView.setTranslateX(carX);
+        imageView.setTranslateY(carY);
 
         // Creates a stack pane to display both the maze and the car
         // Stackpane is a basically a container in java fx where it arranges its children in a back-to-front stack.
