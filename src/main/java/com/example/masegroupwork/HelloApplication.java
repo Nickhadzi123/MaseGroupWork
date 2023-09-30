@@ -80,6 +80,7 @@ public class HelloApplication extends Application {
         // Set focus to the scene to capture key events
         scene.getRoot().requestFocus();
     }
+
     // Method to set colors for each cell in the maze and draw them on the canvas.
     private void MazeColors(GraphicsContext gc) {
         // Loop through the maze array and draw colored cells
@@ -110,6 +111,7 @@ public class HelloApplication extends Application {
         imageView.setRotate(carRotation);
     }
     //this is the movement function
+
     private void Traverse(KeyEvent event) {
         int redBlockCol = 11;
         double redBlockRow = 1.5;
@@ -121,21 +123,29 @@ public class HelloApplication extends Application {
 
         switch (keyCode) {
             case UP:
+
                 newCarY -= moveAmount;
                 carRotation = 0; // Set rotation angle for upward movement
                 break;
+
             case DOWN:
+
                 newCarY += moveAmount;
                 carRotation = 180; // Set rotation angle for downward movement
                 break;
+
             case LEFT:
+
                 newCarX -= moveAmount;
                 carRotation = -90; // Set rotation angle for leftward movement
                 break;
+
             case RIGHT:
+
                 newCarX += moveAmount;
                 carRotation = 90; // Set rotation angle for rightward movement
                 break;
+
             default:
                 // Ignore other keys
                 return;

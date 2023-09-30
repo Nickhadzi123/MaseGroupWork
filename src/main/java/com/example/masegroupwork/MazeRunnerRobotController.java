@@ -2,6 +2,7 @@ package com.example.masegroupwork;
 
 import javafx.animation.PauseTransition;
 import javafx.animation.SequentialTransition;
+import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -44,8 +45,9 @@ public class MazeRunnerRobotController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        //1st Step (Horizontal Translation going right by 24 pixels)
+        //1st Step (Horizontal Translation going right coming from off-screen)
         TranslateTransition step1 = new TranslateTransition(Duration.millis(500), robo);
+        step1.setFromX(-24);
         step1.setToX(24);
 
         //2nd Step (Vertical Translation going up by 105 pixels)
@@ -92,9 +94,9 @@ public class MazeRunnerRobotController implements Initializable {
         TranslateTransition step12 = new TranslateTransition(Duration.millis(500), robo);
         step12.setToY(-14);
 
-        //13th Step; Maze's Exit Point (Horizontal Translation by 23 pixels)
+        //13th Step; Maze's Exit Point (Horizontal Translation going right off-screen)
         TranslateTransition step13 = new TranslateTransition(Duration.millis(500), robo);
-        step13.setToX(520);
+        step13.setToX(570);
 
         //Plays steps 1-13 in a sequence with a pause in between
         SequentialTransition sequentialTransition = new SequentialTransition(
@@ -114,7 +116,8 @@ public class MazeRunnerRobotController implements Initializable {
 
         );
 
-        //plays the animation
+        //plays the animation indefinitely
+        sequentialTransition.setCycleCount(Timeline.INDEFINITE);
         sequentialTransition.play();
     }
 }
