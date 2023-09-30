@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefWidth="567.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.masegroupwork.MazeRunnerRobotController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefWidth="567.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.masegroupwork.MazeRunnerRobotController">
    <TabPane layoutX="7.0" prefHeight="432.0" prefWidth="567.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
      <tabs>
        <Tab text="Robot">
@@ -32,10 +32,29 @@
                </ImageView>
             </graphic>
        </Tab>
-       <Tab text="Untitled Tab 2">
+       <Tab text="Car">
          <content>
-           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <ImageView fitHeight="390.0" fitWidth="550.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@maze2.png" />
+                        </image>
+                     </ImageView>
+                     <ImageView fx:id="robo2" fitHeight="37.0" fitWidth="55.0" layoutX="36.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@car.png" />
+                        </image>
+                     </ImageView>
+                  </children></AnchorPane>
          </content>
+            <graphic>
+               <ImageView fx:id="robo11" fitHeight="32.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@car.png" />
+                  </image>
+               </ImageView>
+            </graphic>
        </Tab>
      </tabs>
    </TabPane>
