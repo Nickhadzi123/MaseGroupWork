@@ -111,6 +111,8 @@ public class HelloApplication extends Application {
     }
     //this is the movement function
     private void Traverse(KeyEvent event) {
+        int redBlockCol = 11;
+        double redBlockRow = 1.5;
         KeyCode keyCode = event.getCode();
 
         // Calculate the new position based on the arrow keys
@@ -139,11 +141,21 @@ public class HelloApplication extends Application {
                 return;
         }
 
-        // Update the car's position
-        carX = newCarX;
-        carY = newCarY;
-        imageView.setTranslateX(carX);
-        imageView.setTranslateY(carY);
-        rotateCarImage(); // Apply rotation
+        // Check if the new position is within the bounds of the maze
+        int colIndex = (int) (newCarX / MAZE_SIZE);
+        double rowIndex = (newCarY / MAZE_SIZE);
+
+// Check if the car's position matches the red block's grid position
+        if (colIndex == redBlockCol && rowIndex == redBlockRow) {
+            System.out.println("You win!");
+            // You can also add code to reset the game or perform other actions here.
+        } else {
+            // Update the car's position
+            carX = newCarX;
+            carY = newCarY;
+            imageView.setTranslateX(carX);
+            imageView.setTranslateY(carY);
+            rotateCarImage(); // Apply rotation
+        }
     }
 }
