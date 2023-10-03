@@ -11,7 +11,7 @@ public class MazeRunnerRobot extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MazeRunnerRobot.class.getResource("MazeTabs.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 567, 433);
+        Scene scene = new Scene(fxmlLoader.load(), 544, 416);
         stage.setTitle("Robot");
         stage.setScene(scene);
         stage.show();
