@@ -6,8 +6,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="544.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.masegroupwork.MazeRunnerRobotController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="544.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.masegroupwork.MazeController">
    <TabPane layoutX="7.0" prefHeight="432.0" prefWidth="567.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
      <tabs>
        <Tab text="Robot">
@@ -15,20 +16,30 @@
            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
                      <ImageView fitHeight="403.0" fitWidth="567.0" layoutX="-17.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@maze.png" />
+                        <Image url="@images/maze.png" />
                      </ImageView>
                      <ImageView fx:id="robo" fitHeight="32.0" fitWidth="26.0" layoutX="1.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@robot.png" />
+                           <Image url="@images/robot.png" />
                         </image>
                      </ImageView>
+                     <Button fx:id="pause" layoutX="233.0" layoutY="163.0" mnemonicParsing="false" onAction="#stop" onMouseClicked="#stop" opacity="0.53" prefHeight="31.0" prefWidth="67.0" text="Pause">
+                        <font>
+                           <Font name="System Bold" size="15.0" />
+                        </font>
+                     </Button>
+                     <Button fx:id="start" disable="true" layoutX="233.0" layoutY="163.0" mnemonicParsing="false" onAction="#start" onMouseClicked="#start" opacity="0.53" prefHeight="31.0" prefWidth="67.0" text="Start" visible="false">
+                        <font>
+                           <Font name="System Bold" size="15.0" />
+                        </font>
+                     </Button>
                   </children>
                </AnchorPane>
          </content>
             <graphic>
-               <ImageView fx:id="robo1" fitHeight="32.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fx:id="robo1" fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@robot.png" />
+                     <Image url="@images/robot.png" />
                   </image>
                </ImageView>
             </graphic>
@@ -39,14 +50,14 @@
                   <children>
                      <ImageView fitHeight="408.0" fitWidth="520.0" layoutX="12.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@maze2.png" />
+                           <Image url="@images/maze2.png" />
                         </image>
                      </ImageView>
                      <Button fx:id="car" layoutY="14.0" mnemonicParsing="false" onKeyPressed="#VroomVroom" prefHeight="40.0" prefWidth="86.0" style="-fx-background-color: transparent;">
                         <graphic>
                            <ImageView fitHeight="37.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@car.png" />
+                                 <Image url="@images/car.png" />
                               </image>
                            </ImageView>
                         </graphic>
@@ -56,7 +67,7 @@
             <graphic>
                <ImageView fx:id="robo11" fitHeight="32.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@car.png" />
+                     <Image url="@images/car.png" />
                   </image>
                </ImageView>
             </graphic>
