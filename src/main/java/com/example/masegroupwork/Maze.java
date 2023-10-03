@@ -7,12 +7,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MazeRunnerRobot extends Application {
+public class Maze extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MazeRunnerRobot.class.getResource("MazeTabs.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Maze.class.getResource("MazeTabs.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 544, 416);
-        stage.setTitle("Robot");
+        stage.setTitle("Maze");
         stage.setScene(scene);
         stage.show();
     }
